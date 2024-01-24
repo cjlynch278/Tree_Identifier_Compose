@@ -85,37 +85,51 @@ fun GreetingPreview() {
     @Composable
     @Preview
     fun BoxExample() {
-        Column {
+        Row(){
+
+        }
+        Image(
+            painter = painterResource(id = R.drawable.black_background),
+            modifier = Modifier
+                .fillMaxSize(),
+            contentDescription = "Background Image",
+            contentScale = ContentScale.FillBounds, // or some other scale
+
+        )
+        Column(modifier = Modifier.fillMaxSize()) {
+
             Box(
+
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(200.dp)
-                    .border(2.dp, SolidColor(Color.Black)
-                        ,shape = RoundedCornerShape(15.dp))
+                    .height(150.dp)
 
-                ,
+                , contentAlignment = Alignment.Center
 
-                contentAlignment = Alignment.Center
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.coniferous),
+                Column (
                     modifier = Modifier
                         .fillMaxSize()
-                        .height(200.dp)
-                        .clip(RoundedCornerShape(10.dp))
-                        .border(2.dp, SolidColor(Color.Black)
-                            ,shape = RoundedCornerShape(15.dp))
+                        .padding(25.dp)
                     ,
-                    contentDescription = "Background Image",
-                    contentScale = ContentScale.Crop,
-                )
-                Text(
-                    text = "Conifers",
-                    style = TextStyle(color = Color.White, fontSize = 48.sp)
-                )
+                    horizontalAlignment = Alignment.CenterHorizontally){
+                    Text(
+                        text = "Colorado Tree Identifier",
+                        style = TextStyle(color = Color.White, fontSize = 32.sp),
+                        textAlign = TextAlign.Center
+
+                    )
+                    Text(
+                        text = "Choose the tree type below",
+                        style = TextStyle(color = Color.White, fontSize = 24.sp),
+                        textAlign = TextAlign.Center
+
+                    )
+                }
             }
             Box(
                 modifier = Modifier
+                    .padding(15.dp)
                     .fillMaxWidth()
                     .height(200.dp)
                     .border(2.dp, SolidColor(Color.Black)
@@ -145,6 +159,7 @@ fun GreetingPreview() {
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
+                    .padding(15.dp)
                     .height(200.dp)
                     .border(2.dp, SolidColor(Color.Black)
                         ,shape = RoundedCornerShape(15.dp))
