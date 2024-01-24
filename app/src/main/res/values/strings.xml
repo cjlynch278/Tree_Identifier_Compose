@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Compose_Project</string>
+    <string name="decidous_tree_image_description">Example of a deciduous tree</string>
+    <string name="changing_variable"> Unchanged</string>
+</resources>
